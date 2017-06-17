@@ -14,3 +14,28 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 // Functions ///////////////////////////////////////////////////
+$("#button").on("click", function () {
+
+var trainName = $("#train-name").val().trim();
+var trainDestination = $("#train-destination").val().trim();
+var firstTrainTime = $("#first-train-time").val().trim();
+var trainFrequency = $("#train-frequency").val().trim();
+
+	console.log(trainName);
+	console.log(trainDestination);
+	console.log(firstTrainTime);
+	console.log(trainFrequency);
+
+	database.ref().set({
+		trainName: trainName,
+		trainDestination: trainDestination,
+		firstTrainTime: firstTrainTime,
+		trainFrequency: trainFrequency
+	});
+});
+
+database.ref().on("value", function (snapshot){
+	console.log(snapshot.val());
+}); 
+
+// 
