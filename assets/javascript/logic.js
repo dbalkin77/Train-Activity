@@ -1,4 +1,4 @@
-console.log('this is working');
+// Variables ////////////////////////////////////////////////////
 
 var config = {
     apiKey: "AIzaSyCw8CLQDvv114eFr05CJa605IZ3ZsT2wMo",
@@ -12,3 +12,5 @@ var config = {
 firebase.initializeApp(config);
 // variable that is a reference to the database
 var database = firebase.database();
+
+// Functions ///////////////////////////////////////////////////
