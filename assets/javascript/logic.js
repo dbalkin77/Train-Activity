@@ -13,13 +13,12 @@ var config = {
 firebase.initializeApp(config);
 // variable that is a reference to the database
 var database = firebase.database();
-// Variables to store user input
 var trainName = "";
 var trainDestination = "";
 var firstTrainTime = 0;
 var trainFrequency = 0;
 
-// Functions ///////////////////////////////////////////////////
+// Onclick event coinciding witih submit buttion	
 $("#button").on("click", function () {
 	event.preventDefault();
 
@@ -76,7 +75,6 @@ $("#button").on("click", function () {
 database.ref().on("child_added", function (childSnapshot){
 	console.log(childSnapshot.val().trainName);
 	console.log(childSnapshot.val().trainDestination);
-	// console.log(childSnapshot.val().firstTrainTime);
 	console.log(childSnapshot.val().trainFrequency);
 
 // Add output to table
@@ -85,14 +83,6 @@ $("#name-output").append("<tr>" + "<td>" + childSnapshot.val().trainName + "</td
 $("#destination-output").append("<tr>" + "<td>" + childSnapshot.val().trainDestination + "</td>" + "</tr>");
 $("#frequency-output").append("<tr>" + "<td>" + childSnapshot.val().trainFrequency + "</td>" + "</tr>");
 
-$("#name-input").text("");
- // trainDestination = $("#train-destination").val().trim();
- // trainFrequency = $("#train-frequency").val().trim();
-
+	
 }); 
 
-// Caluclating Train times:
-
-
-
-// 
